@@ -16,12 +16,13 @@ async function status(fastify) {
           .prop('status', S.string())
           .prop('version', S.string())
       },
-    }
+      tags: ['Status']
+    },
   });
-};
 
-async function onStatus(req, reply) {
-  return { status: 'ok', version };
-}
+  async function onStatus(req, reply) {
+    return { status: 'ok', version };
+  }
+};
 
 export default status;
